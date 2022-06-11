@@ -10,8 +10,18 @@ const mixpanelConfig =
     : {}
 
 function useMixpanel() {
-  mixpanel.init(process.env.MIXPANEL_API_TOKEN as string, mixpanelConfig)
-  return mixpanel
+  const [isMixpanelReady, setIsMixpanelReady] = React.useState(false)
+
+  React.useEffect(() => {
+    mixpanel.init(process.env.MIXPANEL_API_TOKEN as string, {
+      ...mixpanelConfig,
+      loaded: () => {
+        setIsMixpanelReady(true)
+      },
+    })
+  })
+
+  return isMixpanelReady ? mixpanel : isMixpanelReady
 }
 
 export default useMixpanel

@@ -24,7 +24,10 @@ const ChangeList = styled.ul`
 
 const Changelog = ({ data }: PageProps) => {
   const mixpanel = useMixpanel()
-  mixpanel.track("View page Changelog")
+  if (mixpanel) {
+    mixpanel.track("View page Changelog")
+  }
+
   return (
     <main>
       <Helmet>

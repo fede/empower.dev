@@ -10,7 +10,10 @@ const PageTitle = styled.h2`
 
 const NotFoundPage = () => {
   const mixpanel = useMixpanel()
-  mixpanel.track("View error 404")
+  if (mixpanel) {
+    mixpanel.track("View error 404")
+  }
+
   return (
     <main>
       <title>Not found</title>

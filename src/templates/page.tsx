@@ -23,7 +23,9 @@ type PageProps = {
 const Page = ({ pageContext }: PageProps) => {
   const { title, body, parent } = pageContext
   const mixpanel = useMixpanel()
-  mixpanel.track(`View page ${title}`)
+  if (mixpanel) {
+    mixpanel.track(`View page ${title}`)
+  }
 
   const parentOpts = title === "Start" ? null : parent
   const pageTitle = title === "Start" ? null : title
