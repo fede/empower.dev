@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lato:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: black
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #131313;
+}
+
+li {
+    line-height: 1.5rem;
+}
+
+.wrapper {
+    max-width: 64rem;
+    margin: auto;
+}
